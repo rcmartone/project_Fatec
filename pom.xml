@@ -8,11 +8,11 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fatec</groupId>
-	<artifactId>projeto-fatec-java</artifactId>
+	<groupId>br.com.projeto</groupId>
+	<artifactId>projeto_fatec</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crm-consultorio</name>
-	<description>projeto springboot de crm para um consultorio</description>
+	<name>projeto_fatec</name>
+	<description>Projeto de sistema de alunos da fatec-sp</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -47,11 +47,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
