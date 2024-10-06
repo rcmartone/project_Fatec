@@ -57,6 +57,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.33</version> <!-- Verifique a versão atual, se necessário -->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -67,5 +72,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	
 </project>
