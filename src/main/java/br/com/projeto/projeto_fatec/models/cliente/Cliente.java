@@ -4,7 +4,17 @@ import java.io.Serializable;
 import java.util.List;
 
 import br.com.projeto.projeto_fatec.models.usuario.Usuario;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -20,7 +30,6 @@ public class Cliente implements Serializable {
     @NotBlank
     private String nome;
     @Column(name="rg", length=12)
-    @NotBlank
     private String rg;
     @Column(name="telefone", length=11)
     @NotBlank
