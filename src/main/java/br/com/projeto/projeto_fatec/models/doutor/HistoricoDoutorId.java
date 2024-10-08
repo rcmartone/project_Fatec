@@ -1,7 +1,7 @@
 package br.com.projeto.projeto_fatec.models.doutor;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class HistoricoDoutorId implements Serializable {
     private Timestamp timestampAlt;
@@ -60,6 +60,8 @@ public class HistoricoDoutorId implements Serializable {
     public void setDoutorId(Long doutorId) {
         this.doutorId = doutorId;
     }
+
+     
 }
 
 

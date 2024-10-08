@@ -3,7 +3,15 @@ package br.com.projeto.projeto_fatec.models.doutor;
 import java.io.Serializable;
 
 import br.com.projeto.projeto_fatec.models.usuario.Usuario;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -13,7 +21,7 @@ public class Doutor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-    @Column(name="id", length=45)
+    @Column(name="nome", length=45)
     @NotBlank
     private String nome;
     @Column(name="cro", length=6)

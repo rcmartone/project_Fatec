@@ -23,8 +23,7 @@ public class HistoricoUsuario {
 
     @Id
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "USR_id", referencedColumnName = "id") // A coluna USR_id refere-se ao id da tabela Usuario
-    @Column(name="USER_id")
+    @JoinColumn(name = "USR_id", referencedColumnName = "id")
     @NotNull
     private Usuario usuarioId; // Relacionamento com a entidade Usuario
     @Column(name="operacao")

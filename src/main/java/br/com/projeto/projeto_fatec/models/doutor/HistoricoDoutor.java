@@ -17,12 +17,13 @@ import jakarta.validation.constraints.NotNull;
 @IdClass(HistoricoDoutorId.class)
 public class HistoricoDoutor implements Serializable {
     @Id
+    @Column(name="timestamp_alt")
+    @NotNull
     private Timestamp timestampAlt;
 
     @Id
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "DTR_id", referencedColumnName = "id") // DTR_id refere-se ao id da tabela DTR
-    @Column(name="DTR_id", length=45)
     @NotBlank
     private Doutor doutorId;
     @Column(name="operacao")
