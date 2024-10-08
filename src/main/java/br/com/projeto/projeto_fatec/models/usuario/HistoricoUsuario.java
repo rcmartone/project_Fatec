@@ -2,25 +2,35 @@ package br.com.projeto.projeto_fatec.models.usuario;
 
 import java.sql.Timestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 
 @Entity
 @IdClass(HistoricoUsuarioId.class)
 public class HistoricoUsuario {
     @Id
+    @Column(name="timestamp_alt")
+    @NotNull
     private Timestamp timestampAlt; // Campo da chave primária
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "USR_id", referencedColumnName = "id") // A coluna USR_id refere-se ao id da tabela Usuario
-    private Usuario usr; // Relacionamento com a entidade Usuario
-
+    @Column(name="USER_id")
+    @NotNull
+    private Usuario usuarioId; // Relacionamento com a entidade Usuario
+    @Column(name="operacao")
+    @NotBlank
     private String operacao;
+    @Column(name="camposAlt", length=45)
     private String camposAlt;
 
     // Construtores, Getters e Setters
@@ -37,11 +47,11 @@ public class HistoricoUsuario {
     }
 
     public Usuario getUsr() {
-        return usr;
+        return usuarioId;
     }
 
-    public void setUsr(Usuario usr) {
-        this.usr = usr;
+    public void setUsr(Usuario usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public String getOperacao() {

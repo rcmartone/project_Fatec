@@ -5,14 +5,14 @@ import java.sql.Timestamp;
 
 public class HistoricoUsuarioId implements Serializable {
     private Timestamp timestampAlt; // Campo da chave primária
-    private int usrId; // Referente ao id da tabela USR
+    private int usuarioId; // Referente ao id da tabela USR
 
     // Construtores
     public HistoricoUsuarioId() {}
 
-    public HistoricoUsuarioId(Timestamp timestampAlt, int usrId) {
+    public HistoricoUsuarioId(Timestamp timestampAlt, int usuarioId) {
         this.timestampAlt = timestampAlt;
-        this.usrId = usrId;
+        this.usuarioId = usuarioId;
     }
 
     // Getters e Setters
@@ -25,11 +25,11 @@ public class HistoricoUsuarioId implements Serializable {
     }
 
     public int getUsrId() {
-        return usrId;
+        return usuarioId;
     }
 
-    public void setUsrId(int usrId) {
-        this.usrId = usrId;
+    public void setUsrId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     // Implementar equals() e hashCode()
@@ -38,11 +38,11 @@ public class HistoricoUsuarioId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof HistoricoUsuarioId)) return false;
         HistoricoUsuarioId that = (HistoricoUsuarioId) o;
-        return usrId == that.usrId && timestampAlt.equals(that.timestampAlt);
+        return usuarioId == that.usuarioId && timestampAlt.equals(that.timestampAlt);
     }
 
     @Override
     public int hashCode() {
-        return 31 * timestampAlt.hashCode() + usrId;
+        return 31 * timestampAlt.hashCode() + usuarioId;
     }
 }

@@ -6,12 +6,12 @@ import java.sql.Timestamp;
 
 public class HistoricoConsultaId implements Serializable {
     private Timestamp timestampAlt; // Campo da chave primária
-    private int cstId; // Referente ao id da tabela CST
+    private Long cstId; // Referente ao id da tabela CST
 
     // Construtores
     public HistoricoConsultaId() {}
 
-    public HistoricoConsultaId(Timestamp timestampAlt, int cstId) {
+    public HistoricoConsultaId(Timestamp timestampAlt, Long cstId) {
         this.timestampAlt = timestampAlt;
         this.cstId = cstId;
     }
@@ -25,25 +25,44 @@ public class HistoricoConsultaId implements Serializable {
         this.timestampAlt = timestampAlt;
     }
 
-    public int getCstId() {
+    public Long getCstId() {
         return cstId;
     }
 
-    public void setCstId(int cstId) {
+    public void setCstId(Long cstId) {
         this.cstId = cstId;
-    }
-
-    // Implementar equals() e hashCode()
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof HistoricoConsultaId)) return false;
-        HistoricoConsultaId that = (HistoricoConsultaId) o;
-        return cstId == that.cstId && timestampAlt.equals(that.timestampAlt);
     }
 
     @Override
     public int hashCode() {
-        return 31 * timestampAlt.hashCode() + cstId;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((timestampAlt == null) ? 0 : timestampAlt.hashCode());
+        result = prime * result + ((cstId == null) ? 0 : cstId.hashCode());
+        return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        HistoricoConsultaId other = (HistoricoConsultaId) obj;
+        if (timestampAlt == null) {
+            if (other.timestampAlt != null)
+                return false;
+        } else if (!timestampAlt.equals(other.timestampAlt))
+            return false;
+        if (cstId == null) {
+            if (other.cstId != null)
+                return false;
+        } else if (!cstId.equals(other.cstId))
+            return false;
+        return true;
+    }
+
+    
 }

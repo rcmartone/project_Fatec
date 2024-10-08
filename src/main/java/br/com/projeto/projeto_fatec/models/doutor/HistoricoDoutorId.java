@@ -1,17 +1,17 @@
 package br.com.projeto.projeto_fatec.models.doutor;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.security.Timestamp;
 
 public class HistoricoDoutorId implements Serializable {
     private Timestamp timestampAlt;
-    private Long dtrId; 
+    private Long doutorId; 
 
     public HistoricoDoutorId() {}
 
-    public HistoricoDoutorId(Timestamp timestampAlt, Long dtrId) {
+    public HistoricoDoutorId(Timestamp timestampAlt, Long doutorId) {
         this.timestampAlt = timestampAlt;
-        this.dtrId = dtrId;
+        this.doutorId = doutorId;
     }
 
     public Timestamp getTimestampAlt() {
@@ -22,20 +22,12 @@ public class HistoricoDoutorId implements Serializable {
         this.timestampAlt = timestampAlt;
     }
 
-    public Long getDtrId() {
-        return dtrId;
-    }
-
-    public void setDtrId(Long dtrId) {
-        this.dtrId = dtrId;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((timestampAlt == null) ? 0 : timestampAlt.hashCode());
-        result = prime * result + ((dtrId == null) ? 0 : dtrId.hashCode());
+        result = prime * result + ((doutorId == null) ? 0 : doutorId.hashCode());
         return result;
     }
 
@@ -53,15 +45,21 @@ public class HistoricoDoutorId implements Serializable {
                 return false;
         } else if (!timestampAlt.equals(other.timestampAlt))
             return false;
-        if (dtrId == null) {
-            if (other.dtrId != null)
+        if (doutorId == null) {
+            if (other.doutorId != null)
                 return false;
-        } else if (!dtrId.equals(other.dtrId))
+        } else if (!doutorId.equals(other.doutorId))
             return false;
         return true;
     }
 
-     
+    public Long getDoutorId() {
+        return doutorId;
+    }
+
+    public void setDoutorId(Long doutorId) {
+        this.doutorId = doutorId;
+    }
 }
 
 

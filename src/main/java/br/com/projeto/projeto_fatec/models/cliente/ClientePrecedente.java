@@ -25,7 +25,7 @@ public class ClientePrecedente implements Serializable {
     private String cpf;
     @Id
     @Column(name="PRC_id")
-    private Long precedenteId;
+    private Long prcId;
     @Column(name = "resposta_adicional", length=255)
     @NotBlank
     private String respostaAdicional;
@@ -45,11 +45,11 @@ public class ClientePrecedente implements Serializable {
     }
 
     public Long getPrecedenteId() {
-        return precedenteId;
+        return prcId;
     }
 
     public void setPrecedenteId(Long precedenteId) {
-        this.precedenteId = precedenteId;
+        this.prcId = precedenteId;
     }
 
     public String getRespostaAdicional() {
