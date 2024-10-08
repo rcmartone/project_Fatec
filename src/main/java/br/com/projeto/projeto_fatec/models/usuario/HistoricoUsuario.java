@@ -1,48 +1,47 @@
-package br.com.projeto.projeto_fatec.modelos.historicos;
+package br.com.projeto.projeto_fatec.models.usuario;
 
 import java.sql.Timestamp;
 
-import br.com.projeto.projeto_fatec.modelos.entidades.DTR;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
+
 
 @Entity
-@IdClass(HST_DTR_Id.class)
-@Data
-public class HST_DTR {
+@IdClass(HistoricoUsuarioId.class)
+public class HistoricoUsuario {
     @Id
-    private Timestamp timestamp_Alt;
+    private Timestamp timestampAlt; // Campo da chave primária
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "DTR_id", referencedColumnName = "id") // DTR_id refere-se ao id da tabela DTR
-    private DTR dtr;
+    @JoinColumn(name = "USR_id", referencedColumnName = "id") // A coluna USR_id refere-se ao id da tabela Usuario
+    private Usuario usr; // Relacionamento com a entidade Usuario
 
     private String operacao;
     private String camposAlt;
 
-    public HST_DTR() {} //Construtor
+    // Construtores, Getters e Setters
+    public HistoricoUsuario() {}
 
     // Getters e Setters
 
     public Timestamp getTimestampAlt() {
-        return timestamp_Alt;
+        return timestampAlt;
     }
 
-    public void setTimestampAlt(Timestamp timestamp_Alt) {
-        this.timestamp_Alt = timestamp_Alt;
+    public void setTimestampAlt(Timestamp timestampAlt) {
+        this.timestampAlt = timestampAlt;
     }
 
-    public DTR getDtr() {
-        return dtr;
+    public Usuario getUsr() {
+        return usr;
     }
 
-    public void setDtr(DTR dtr) {
-        this.dtr = dtr;
+    public void setUsr(Usuario usr) {
+        this.usr = usr;
     }
 
     public String getOperacao() {
@@ -61,4 +60,3 @@ public class HST_DTR {
         this.camposAlt = camposAlt;
     }
 }
-

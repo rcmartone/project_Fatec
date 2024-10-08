@@ -1,26 +1,20 @@
-package br.com.projeto.projeto_fatec.modelos.historicos;
+package br.com.projeto.projeto_fatec.models.consulta;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-import br.com.projeto.projeto_fatec.modelos.entidades.CST;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.Data;
+import jakarta.persistence.*;
 
 @Entity
-@IdClass(HST_CST_Id.class)
-@Data
-public class HST_CST {
+@IdClass(HistoricoConsultaId.class)
+public class HistoricoConsulta implements Serializable {
     @Id
     private Timestamp timestampAlt; // Campo da chave primária
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "CST_id", referencedColumnName = "id") // A coluna CST_id refere-se ao id da tabela CST
-    private CST cst; // Relacionamento com a entidade CST
+    @JoinColumn(name = "CST_id", referencedColumnName = "id") // A coluna CST_id refere-se ao id da tabela Consulta
+    private Consulta cst; // Relacionamento com a entidade Consulta
 
     private String tipo;
     private String status;
@@ -29,7 +23,7 @@ public class HST_CST {
     private Timestamp dataFim;
 
     // Construtores, Getters e Setters
-    public HST_CST() {}
+    public HistoricoConsulta() {}
 
     // Getters e Setters
 
@@ -41,11 +35,11 @@ public class HST_CST {
         this.timestampAlt = timestampAlt;
     }
 
-    public CST getCst() {
+    public Consulta getCst() {
         return cst;
     }
 
-    public void setCst(CST cst) {
+    public void setCst(Consulta cst) {
         this.cst = cst;
     }
 

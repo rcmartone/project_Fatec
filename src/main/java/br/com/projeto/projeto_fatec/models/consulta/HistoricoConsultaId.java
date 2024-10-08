@@ -1,17 +1,17 @@
-package br.com.projeto.projeto_fatec.modelos.historicos;
+package br.com.projeto.projeto_fatec.models.consulta;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 
-public class HST_CST_Id implements Serializable {
+public class HistoricoConsultaId implements Serializable {
     private Timestamp timestampAlt; // Campo da chave primária
     private int cstId; // Referente ao id da tabela CST
 
     // Construtores
-    public HST_CST_Id() {}
+    public HistoricoConsultaId() {}
 
-    public HST_CST_Id(Timestamp timestampAlt, int cstId) {
+    public HistoricoConsultaId(Timestamp timestampAlt, int cstId) {
         this.timestampAlt = timestampAlt;
         this.cstId = cstId;
     }
@@ -37,8 +37,8 @@ public class HST_CST_Id implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof HST_CST_Id)) return false;
-        HST_CST_Id that = (HST_CST_Id) o;
+        if (!(o instanceof HistoricoConsultaId)) return false;
+        HistoricoConsultaId that = (HistoricoConsultaId) o;
         return cstId == that.cstId && timestampAlt.equals(that.timestampAlt);
     }
 
